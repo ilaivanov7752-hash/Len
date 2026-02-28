@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель управления</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #1c1c1c; color: #fff; padding: 40px; }
+        table { width: 100%; border-collapse: collapse; background: #2c2c2c; }
+        th, td { padding: 12px; border: 1px solid #444; text-align: left; }
+        th { background: #4691ce; color: white; }
+        tr:hover { background: #383838; }
+        .back { display: inline-block; margin-bottom: 20px; color: #4691ce; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <a href="/" class="back">← Назад на сайт</a>
+    <h1>Список заявок</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user['rowid'] }}</td>
+                <td>{{ user['name'] }}</td>
+                <td>{{ user['email'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
