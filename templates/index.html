@@ -34,6 +34,145 @@
 			from { opacity: 0; transform: translateY(-20px); }
 			to { opacity: 1; transform: translateY(0); }
 		}
+			
+				/* Стили для формы */
+		form {
+			max-width: 400px;
+			margin: 40px auto;
+			padding: 30px;
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			border-radius: 15px;
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Заголовок формы (если нужен) */
+		form h3 {
+			text-align: center;
+			margin-bottom: 25px;
+			color: #fff;
+			font-size: 24px;
+			letter-spacing: 1px;
+		}
+
+		/* Контейнер для полей */
+		form div {
+			margin-bottom: 20px;
+		}
+
+		/* Стили для label */
+		form label {
+			display: block;
+			margin-bottom: 8px;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			opacity: 0.8;
+		}
+
+		/* Стили для input полей */
+		form input {
+			width: 100%;
+			padding: 12px 15px;
+			background: rgba(255, 255, 255, 0.9);
+			border: 2px solid transparent;
+			border-radius: 8px;
+			font-size: 16px;
+			color: #333;
+			transition: all 0.3s ease;
+			box-sizing: border-box;
+		}
+
+		/* Эффект при фокусе */
+		form input:focus {
+			outline: none;
+			border-color: #007bff;
+			background: #fff;
+			box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+		}
+
+		/* Стили для кнопки */
+		form button {
+			width: 100%;
+			padding: 14px;
+			background: linear-gradient(45deg, #007bff, #0056b3);
+			color: white;
+			border: none;
+			border-radius: 8px;
+			font-size: 16px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-top: 10px;
+		}
+
+		/* Эффект при наведении на кнопку */
+		form button:hover {
+			background: linear-gradient(45deg, #0056b3, #004094);
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+		}
+
+		/* Эффект при нажатии */
+		form button:active {
+			transform: translateY(0);
+		}
+
+		/* Стили для placeholder */
+		form input::placeholder {
+			color: #999;
+			font-size: 14px;
+		}
+
+		/* Адаптация для мобильных */
+		@media (max-width: 768px) {
+			form {
+				margin: 20px 15px;
+				padding: 20px;
+			}
+			
+			form input {
+				padding: 10px 12px;
+			}
+			
+			/* Стили для кнопки */
+			form button {
+				width: 100%;
+				padding: 14px 10px;  /* уменьшил горизонтальные отступы */
+				background: linear-gradient(45deg, #007bff, #0056b3);
+				color: white;
+				border: none;
+				border-radius: 8px;
+				font-size: 14px;  /* уменьшил с 16px до 14px */
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;  /* уменьшил межбуквенное расстояние */
+				margin-top: 10px;
+				white-space: nowrap;  /* запрещаем перенос текста */
+				overflow: hidden;  /* прячем лишнее */
+				text-overflow: ellipsis;  /* если не влезет - будет ... */
+			}
+
+/* Если даже так не влазит - сделай текст короче */
+/* Вместо "Отправить и сохранить" напиши просто "Отправить" */
+		}
+
+		/* Дополнительный эффект - подсветка полей при заполнении */
+		form input:valid {
+			border-color: #28a745;
+		}
+
+		/* Стили для ошибок (если нужно) */
+		form input:invalid:not(:placeholder-shown) {
+			border-color: #dc3545;
+		}
 	</style>
 	
 	
@@ -47,8 +186,8 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Lens</h1>
-						<p>Just another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+						<h1>Простая Галерея</h1>
+						<p>Just another fine responsive site template</p>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -79,7 +218,7 @@
 						<label for="Email">Email:</label>
 						<input type="email" id="Email" name="user_email" required>
 
-						<button type="submit">Отправить и сохранить</button>
+						<button type="submit">Отправить</button>
 					</form>
 					
 					</header>
